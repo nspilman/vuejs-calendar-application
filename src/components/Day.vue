@@ -7,7 +7,9 @@
         {{day.date.getDate()}}
         </h4>
             {{day.classes.length}} {{classString}}<br>
-            {{signedUp}} signed up        
+           <span v-bind:class="{'signedUp':signedUp > 0}"> 
+               {{signedUp}} signed up  
+           </span>     
     </button>
 </template>
 
@@ -66,5 +68,9 @@ h4{
     margin:0;
 }
 
+.signedUp{
+    color:green;
+    font-size:12px;
+}
 </style>
 
