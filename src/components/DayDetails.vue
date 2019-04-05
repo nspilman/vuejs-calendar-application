@@ -1,15 +1,17 @@
 <template>
     <div id = "day-details" class="pt-3">
         <div class = "row">
-            <div class = "col-sm-10"></div>
+            <div class = "col-sm-2"/>
+         <div class = "col-sm-8">
+             <h2> 
+                  {{month}} {{numericDay}}
+             </h2>
+            </div>
             <div class = "col-sm-2">
         <h2 @click="unselectDay">X</h2>
             </div>
         </div>
         <div v-if="day">
-            <h2>
-        {{month}} {{numericDay}}
-        </h2>
         <div v-for="session in day.classes" :key="session.id + session.date">
             <Details :session="session" :day="day" @selectedSession="selectSession" @quitSession="quitSession"/>
             </div>
@@ -54,6 +56,6 @@ created(){
     min-height:80vh;
     border-radius:25px;
     margin-left:2em;
-    background-color:ivory;
+    background-color:rgb(255,255,255,.6);
 }
 </style>

@@ -7,7 +7,7 @@
         </b>
         <span v-if="!open" class = "signedUpNumber"> - {{signupList.length}}</span>
        <i> <p>Click to Toggle</p></i>
-        <div v-if="open" class = "signupDetails" >
+        <div v-if="open && signupList.length>0" class = "signupDetails container" >
             <div v-for="signup in signupList" :key="signup.name+signup.date">
                 {{signup.date.getMonth()+1+"/" + signup.date.getDate() }} - {{signup.name}} - {{signup.time+":00"}}
             </div>
@@ -29,8 +29,8 @@ data(){
 <style>
 #signups{
     width:400px;
-    padding-bottom:2em;
-    background-color:gray;
+    padding-bottom:1em;
+    background-color:rgb(0,0,0,.5);
     position: fixed;
     color:white;
     bottom: 0;
@@ -43,12 +43,13 @@ data(){
     cursor:pointer;
 }
 .signupsOpen{
-    height:400px;
+    min-height:200px;
     padding-top:1em;
 }
 
 .signupDetails{
     padding:1em;
+    background-color:rgb(0,0,0,.8)
 }
 
 .signedUpNumber{

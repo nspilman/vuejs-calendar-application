@@ -93,7 +93,7 @@ export default {
 }
 
 .calendarWrapper{
-    background-color:ivory;
+    background-color:rgb(255,255,255,.6);
     padding:1em;
     margin-left:1em;
     border-radius:25px;
